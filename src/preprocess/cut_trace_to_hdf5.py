@@ -21,19 +21,9 @@ CATALOG_PATH = PROJECT_ROOT / "data" / "processed" / "2025_final_catalog_demo.cs
 TRACES_PATH = PROJECT_ROOT / "data" / "processed" / "2025_final_traces_demo.csv"
 WAVEFORM_ROOT = PROJECT_ROOT / "data" / "raw"
 OUTPUT_HDF5 = PROJECT_ROOT / "data" / "processed" / "TSMIP_2025_demo.hdf5"
-STATION_TRANS_PATH = PROJECT_ROOT / "data" / "raw" / "TSMIP-Instrument-parameters-20240821.txt"
 
 TARGET_SAMPLING_RATE = 200
 
-try:
-    station_trans_info = pd.read_csv(STATION_TRANS_PATH, sep="\t")
-    station_trans_info.drop(['安裝經度', '安裝緯度', '安裝高程', '啟用日期', '停用日期', 'Z軸極性', 'N軸極性', 'E軸極性', '感測器型號'], axis=1, inplace=True)
-    station_trans_info.columns = ["Z_trans", "N_trans", "E_trans", "station_code"]
-    station_trans_info = station_trans_info.loc[:675]
-    print(f"✓ Loaded station transformation info: {len(station_trans_info)} stations")
-except Exception as e:
-    print(f"⚠ Warning: Could not load station transformation info: {e}")
-    station_trans_info = None
 
 def build_waveform_folder(event_row: pd.Series) -> str:
     """Build waveform folder name from event timestamp fields."""
@@ -87,17 +77,6 @@ def read_station_stream(waveform_path: str, station_code: str) -> obspy.Stream:
     trace_z = obspy.read(z_file)
     trace_n = obspy.read(n_file)
     trace_e = obspy.read(e_file)
-
-    if station_trans_info is not None:
-        trans_rows = station_trans_info[station_trans_info["station_code"] == station_code]
-        if len(trans_rows) > 0:
-            z_trans = trans_rows["Z_trans"].values[0]
-            n_trans = trans_rows["N_trans"].values[0]
-            e_trans = trans_rows["E_trans"].values[0]
-
-            trace_z[0].data = trace_z[0].data * z_trans
-            trace_n[0].data = trace_n[0].data * n_trans
-            trace_e[0].data = trace_e[0].data * e_trans
 
     stream = obspy.core.stream.Stream()
     stream.append(trace_z[0])
