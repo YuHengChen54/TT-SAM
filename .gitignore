@@ -1,0 +1,14 @@
+/.vscode/*
+
+/data/raw/*
+!/data/raw/.gitkeep
+/data/processed/*
+!/data/processed/.gitkeep
+
+/mlruns/*
+/mlartifacts/*
+
+/analysis/ablation_study/*
+/*.py
+
+__pycache__/
