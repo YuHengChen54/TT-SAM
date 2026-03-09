@@ -1,5 +1,20 @@
 # TT-SAM: Taiwan Transformer Shaking Alert Model
 
+<p align="left">
+  <a href="https://doi.org/10.5281/zenodo.18885307">
+    <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.18885307.svg" alt="Dataset DOI">
+  </a>
+  <a href="https://doi.org/10.5281/zenodo.18923222">
+    <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.18923222.svg" alt="Repository DOI">
+  </a>
+  <img src="https://img.shields.io/badge/Status-Under_Review-orange.svg" alt="Status">
+  <img src="https://img.shields.io/badge/Python-3.8+-blue.svg" alt="Python Version">
+  <img src="https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg" alt="PyTorch Version">
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
+</p>
+
+---
+
 This repository contains the PyTorch implementation of:
 > **"A Deep Learning Framework for Peak Ground Velocity Prediction Using Multi-Station Velocity Waveforms: The Taiwan Transformer Shaking Alert Model (TT-SAM)"**
 
@@ -114,6 +129,21 @@ If you find this work useful for your research, please cite our paper:
 }
 ```
 
+**Software/Repository DOI:**
+
+If you use this repository, please also cite:
+
+```bibtex
+@software{chen2026ttsam_repo,
+  author    = {Chen, Yu-Heng and Chan, Chung-Han and Chang, Chieh-Chen and Ma, Kuo-Fong},
+  title     = {{TT-SAM}: Taiwan Transformer Shaking Alert Model},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.18923222},
+  url       = {https://doi.org/10.5281/zenodo.18923222}
+}
+```
+
 **Data Citation:**
 
 If you use the demo dataset provided on Zenodo, please cite it as follows:
@@ -126,5 +156,6 @@ If you use the demo dataset provided on Zenodo, please cite it as follows:
   publisher = {Zenodo},
   version   = {v1},
   doi       = {10.5281/zenodo.18885307},
-  url       = {[https://doi.org/10.5281/zenodo.18885307](https://doi.org/10.5281/zenodo.18885307)}
+  url       = {https://doi.org/10.5281/zenodo.18885307}
 }
+```
