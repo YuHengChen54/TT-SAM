@@ -52,6 +52,22 @@ pip install torch numpy pandas scipy scikit-learn matplotlib obspy h5py tqdm mlf
 
 ---
 
+## 📦 Demo Dataset (Quick Start)
+
+If you wish to test the model or scripts without performing the full preprocessing pipeline, we provide a **Demo Dataset** on Zenodo. This dataset includes pre-processed HDF5 files ready for training and inference.
+
+- **Zenodo Repository**: [10.5281/zenodo.18885307](https://doi.org/10.5281/zenodo.18885307)
+- **Contents**: 
+  - `TSMIP_2016_demo.hdf5`: Processed waveform data with physical features (Pd, CAV, TP).
+  - Sample catalogs and metadata.
+
+**To use this dataset:**
+1. Download the files from Zenodo.
+2. Place the HDF5 file into the `data/processed/` directory.
+3. You can then skip the `src/preprocess` steps and proceed directly to **Training** or **Evaluation**.
+
+---
+
 ## How to Use
 
 ### 1) Model Architecture
@@ -97,3 +113,18 @@ If you find this work useful for your research, please cite our paper:
   url     = {https://github.com/yuhengchen54/TT-SAM}
 }
 ```
+
+**Data Citation:**
+
+If you use the demo dataset provided on Zenodo, please cite it as follows:
+
+```bibtex
+@dataset{chen2026ttsam_dataset,
+  author    = {Chen, Yu-Heng and Chan, Chung-Han and Chang, Chieh-Chen and Ma, Kuo-Fong},
+  title     = {Demo Dataset for {TT-SAM}: {Taiwan} Transformer Shaking Alert Model},
+  year      = {2026},
+  publisher = {Zenodo},
+  version   = {v1},
+  doi       = {10.5281/zenodo.18885307},
+  url       = {[https://doi.org/10.5281/zenodo.18885307](https://doi.org/10.5281/zenodo.18885307)}
+}
