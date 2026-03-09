@@ -1,10 +1,12 @@
 # Model Training & Experiment Tracking
 
+← [Back to Main README](../../README.md)
+
 This directory contains the scripts for training **TT-SAM**. The training logic is designed to handle seismic data imbalances and to ensure model robustness through spatio-temporal augmentation.
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Prerequisites
 
@@ -47,7 +49,7 @@ Then open `http://localhost:5000` in your browser.
 
 ---
 
-## 📂 Script Overview
+## Script Overview
 
 ### `multi_station_training.py`
 - **Purpose:** The main entry point for training.
@@ -63,7 +65,7 @@ Then open `http://localhost:5000` in your browser.
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 You can adjust the following parameters directly in `multi_station_training.py`:
 
@@ -81,10 +83,3 @@ for batch_size in [16]:
         for run_index in range(3):
             # Training with these hyperparameters
 ```
-
----
-
-## 🔗 Related Files
-
-- [Data Preprocessing](../preprocess/README.md): Generate HDF5 datasets before training.
-- [Model Architecture](../models/README.md): Details on the CNN-Transformer-MDN architecture.

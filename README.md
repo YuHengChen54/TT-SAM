@@ -52,7 +52,7 @@ pip install torch numpy pandas scipy scikit-learn matplotlib obspy h5py tqdm mlf
 
 ---
 
-## 📦 Demo Dataset (Quick Start)
+## Demo Dataset (Quick Start)
 
 If you wish to test the model or scripts without performing the full preprocessing pipeline, we provide a **Demo Dataset** on Zenodo. This dataset includes pre-processed HDF5 files ready for training and inference.
 
@@ -73,16 +73,16 @@ If you wish to test the model or scripts without performing the full preprocessi
 ### 1) Model Architecture
 The main model described in the paper is implemented in:
 
-- `src/models/CNN_Transformer_Mixtureoutput.py`
+- [src/models/CNN_Transformer_Mixtureoutput.py](src/models/CNN_Transformer_Mixtureoutput.py)
 
 ### 2) Data Preprocessing (Demo Pipeline)
-Detailed preprocessing steps are documented in `src/preprocess`.
+Detailed preprocessing steps are documented in [src/preprocess/README.md](src/preprocess/README.md).
 
 ### 3) Training
-Detailed training instructions are documented in `src/training`.
+Detailed training instructions are documented in [src/training/README.md](src/training/README.md).
 
 ### 4) Inference & Evaluation
-Detailed inference and evaluation instructions are documented in `src/training`.
+Detailed inference and evaluation instructions are documented in [src/training/README.md](src/training/README.md).
 
 ---
 
